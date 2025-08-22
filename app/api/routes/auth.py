@@ -27,6 +27,12 @@ def login(request: LoginRequest, db=Depends(get_db)):
         user = db.users.find_one({"username": request.username})
         if user and user["password"] == request.password:
             return {"success": True, "user": user}
+        elif not user:
+            # Create new user if not found
+            new_user = UserCreate(provider="username", username=request.username, password=request.password)
+            result = db.users.insert_one(new_user.dict())
+            created_user = db.users.find_one({"_id": result.inserted_id})
+            return {"success": True, "user": created_user}
         else:
             raise HTTPException(status_code=401, detail="Invalid credentials")
     else:
