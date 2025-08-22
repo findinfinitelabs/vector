@@ -1,0 +1,28 @@
+# Core libraries
+fastapi
+uvicorn
+pydantic
+python-dotenv
+
+# AI/LLM and RAG
+openai
+transformers
+langchain
+sentence-transformers
+faiss-cpu
+
+# Image labeling
+opencv-python
+Pillow
+
+# Gamification and training
+scikit-learn
+
+# BDD and testing
+pytest
+pytest-bdd
+pytest-cov
+
+# Misc
+requests
+pymongo

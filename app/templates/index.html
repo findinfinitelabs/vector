@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Learning Game</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the AI Learning Game!</h1>
+        <form id="login-form">
+            <label for="provider">Login with:</label>
+            <select id="provider" name="provider">
+                <option value="google">Google</option>
+                <option value="apple">Apple</option>
+                <option value="x">X</option>
+                <option value="username">Username/Password</option>
+            </select>
+            <input type="text" id="username" name="username" placeholder="Username">
+            <input type="password" id="password" name="password" placeholder="Password">
+            <button type="submit">Login</button>
+        </form>
+        <div id="progress"></div>
+    </div>
+    <script src="/static/app.js"></script>
+</body>
+</html>
