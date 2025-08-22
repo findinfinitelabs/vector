@@ -14,26 +14,11 @@ class LoginRequest(BaseModel):
 
 @router.post("/login")
 def login(request: LoginRequest, db=Depends(get_db)):
-    # Placeholder for OAuth and username/password logic
-    if request.provider in ["google", "apple", "x"]:
-        # Validate token with provider (pseudo-code)
-        user = db.users.find_one({"provider": request.provider, "token": request.token})
-        if not user:
-            # Create new user
-            user = UserCreate(provider=request.provider, token=request.token)
-            db.users.insert_one(user.dict())
-        return {"success": True, "user": user}
-    elif request.provider == "username":
-        user = db.users.find_one({"username": request.username})
-        if user and user["password"] == request.password:
-            return {"success": True, "user": user}
-        elif not user:
-            # Create new user if not found
-            new_user = UserCreate(provider="username", username=request.username, password=request.password)
-            result = db.users.insert_one(new_user.dict())
-            created_user = db.users.find_one({"_id": result.inserted_id})
-            return {"success": True, "user": created_user}
-        else:
-            raise HTTPException(status_code=401, detail="Invalid credentials")
-    else:
-        raise HTTPException(status_code=400, detail="Unknown provider")
+    # Authentication bypassed for demo/testing
+    demo_user = {
+        "_id": "demo-user-id",
+        "provider": request.provider,
+        "username": request.username,
+        "progress": {"level": 1, "points": 0}
+    }
+    return {"success": True, "user": demo_user}
