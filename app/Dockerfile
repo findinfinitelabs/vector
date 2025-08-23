@@ -4,10 +4,12 @@ FROM python:3.9-bullseye
 # Set working directory
 WORKDIR /app
 
-# Copy the entire project directory to the working directory
-COPY . /app
-
-# Copy requirements.txt specifically from the app subdirectory
+# Copy specific files and directories from the build context
+COPY app/api/main.py /app/api/main.py
+COPY app/api /app/api
+COPY app/models /app/models
+COPY app/static /app/static
+COPY app/templates /app/templates
 COPY app/requirements.txt /app/requirements.txt
 
 # Install system dependencies including those needed for OpenCV and other build tools
@@ -31,4 +33,4 @@ EXPOSE 8080
 ENV MONGO_URI=mongodb://host.docker.internal:27017/
 
 # Run the application from the correct directory
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080"]
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8080"]
