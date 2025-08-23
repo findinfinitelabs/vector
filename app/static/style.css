@@ -1,8 +1,43 @@
-body { font-family: 'Segoe UI', Arial, sans-serif; background: linear-gradient(135deg, #e0eafc, #cfdef3); margin: 0; }
-.container { max-width: 400px; margin: 60px auto; background: #fff; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); padding: 32px; }
-h1 { color: #2d6cdf; text-align: center; }
-form { display: flex; flex-direction: column; gap: 12px; }
-input, select, button { padding: 10px; border-radius: 6px; border: 1px solid #d0d0d0; }
-button { background: #2d6cdf; color: #fff; border: none; cursor: pointer; transition: background 0.2s; }
-button:hover { background: #1a4fa3; }
-#progress { margin-top: 24px; text-align: center; font-size: 1.1em; color: #333; }
+body {
+    background: #1a1a2e;
+    margin: 0;
+    padding: 0;
+}
+.card {
+    border: none;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+.card-header {
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.btn-outline-light {
+    color: #ffffff;
+    border-color: #ffffff;
+    transition: all 0.3s ease;
+}
+.btn-outline-light:hover {
+    color: #2d4065;
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+.form-control {
+    background-color: #2d4065;
+    border-color: #3a4e72;
+    color: #ffffff;
+}
+.form-control:focus {
+    background-color: #2d4065;
+    border-color: #4a6ea9;
+    box-shadow: 0 0 5px #4a6ea9;
+}
+.btn-primary {
+    background-color: #2d4065;
+    border-color: #4a6ea9;
+}
+.btn-primary:hover {
+    background-color: #1a2a44;
+    border-color: #2d4065;
+}
