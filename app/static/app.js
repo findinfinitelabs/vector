@@ -6,14 +6,25 @@ function selectProvider(provider) {
     document.getElementById('password-group').style.display = (provider === 'username' || provider === 'email') ? 'block' : 'none';
 }
 
+
 document.getElementById('login-form').addEventListener('submit', async function(e) {
     e.preventDefault();
-    const provider = document.getElementById('provider').value;
+    let provider = document.getElementById('provider').value;
     const username = document.getElementById('username').value.trim();
     const password = document.getElementById('password').value.trim();
     const email = document.getElementById('email').value.trim();
     let token = null;
-    if (provider !== 'username' && provider !== 'email' && email) token = 'demo-token';
+    let url = '/auth/login';
+
+    // If registering, set provider based on which field is filled
+    if (provider === 'register') {
+        url = '/auth/register';
+        if (email) {
+            provider = 'email';
+        } else if (username) {
+            provider = 'username';
+        }
+    }
 
     const body = { provider };
     if (email) body.email = email;
@@ -22,7 +33,7 @@ document.getElementById('login-form').addEventListener('submit', async function(
     if (token) body.token = token;
 
     try {
-        const res = await fetch('/auth/login', {
+        const res = await fetch(url, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(body)
@@ -42,4 +53,14 @@ document.getElementById('login-form').addEventListener('submit', async function(
         document.getElementById('progress').innerText = 'Error: Unable to connect to server.';
         console.error(error);
     }
+});
+
+// Add registration toggle
+
+document.querySelectorAll('.btn-outline-light').forEach(button => {
+    button.addEventListener('click', function() {
+        const provider = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+        // If register button, set provider to 'register' for form logic
+        document.getElementById('provider').value = provider === 'register' ? 'register' : provider;
+    });
 });
