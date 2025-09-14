@@ -7,6 +7,8 @@ npm-debug.log*
 # Ignore .env files
 .env
 
+ai-education-platform/frontend/node_modules/
+
 # Ignore Python virtual environments
 .venv/
 
