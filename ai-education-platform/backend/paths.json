@@ -1,0 +1,218 @@
+{
+  "1": {
+    "title": "AI Basics",
+    "proficiency": "Beginner",
+    "modules": [
+      {
+        "id": 1,
+        "title": "What is AI?",
+        "activityType": "quiz",
+        "activity": "Quiz: AI Fundamentals",
+        "questions": [
+          {
+            "question": "What does AI stand for?",
+            "options": ["Artificial Intelligence", "Automated Integration", "Algorithmic Insight", "Adaptive Interface"],
+            "correct": "Artificial Intelligence"
+          },
+          {
+            "question": "Which is an AI application?",
+            "options": ["Word processing", "Self-driving cars", "Email sorting", "File compression"],
+            "correct": "Self-driving cars"
+          },
+          {
+            "question": "Machine learning is a subset of AI.",
+            "options": ["True", "False"],
+            "correct": "True"
+          },
+          {
+            "question": "What is an example of AI in healthcare?",
+            "options": ["Spreadsheet analysis", "Medical imaging diagnosis", "Text editing", "File storage"],
+            "correct": "Medical imaging diagnosis"
+          },
+          {
+            "question": "Deep learning uses neural networks.",
+            "options": ["True", "False"],
+            "correct": "True"
+          }
+        ],
+        "points": 50
+      },
+      {
+        "id": 2,
+        "title": "Types of AI (Narrow vs. General)",
+        "activityType": "prompt",
+        "activity": "Prompt: Identify AI Types",
+        "prompt": "Describe a system that predicts weather patterns. Is it Narrow or General AI?",
+        "correctKeywords": ["Narrow"],
+        "points": 30
+      },
+      {
+        "id": 3,
+        "title": "AI in Everyday Life",
+        "activityType": "interactive",
+        "activity": "Map AI Applications",
+        "scenarios": [
+          { "scenario": "Netflix suggests movies", "category": "Recommendation Systems" },
+          { "scenario": "Siri answers questions", "category": "Speech Recognition" },
+          { "scenario": "Google Maps navigation", "category": "Route Optimization" },
+          { "scenario": "Spam email filtering", "category": "Classification" },
+          { "scenario": "Face recognition unlock", "category": "Computer Vision" },
+          { "scenario": "Amazon product recommendations", "category": "Recommendation Systems" },
+          { "scenario": "Voice-to-text transcription", "category": "Speech Recognition" },
+          { "scenario": "Autonomous drone navigation", "category": "Robotics" }
+        ],
+        "points": 40
+      }
+    ]
+  },
+  "2": {
+    "title": "Prompt Analysis and Engineering",
+    "proficiency": "Intermediate",
+    "modules": [
+      {
+        "id": 1,
+        "title": "Understanding Prompts",
+        "activityType": "quiz",
+        "activity": "Quiz: Prompt Basics",
+        "questions": [
+          {
+            "question": "What makes a good prompt?",
+            "options": ["Vague terms", "Specific instructions", "Long paragraphs", "Ambiguous goals"],
+            "correct": "Specific instructions"
+          },
+          {
+            "question": "Which prompt is clearer?",
+            "options": ["Tell me about AI", "Explain supervised learning in 100 words"],
+            "correct": "Explain supervised learning in 100 words"
+          },
+          {
+            "question": "Context in a prompt improves AI responses.",
+            "options": ["True", "False"],
+            "correct": "True"
+          },
+          {
+            "question": "What should a prompt include?",
+            "options": ["Emojis only", "Clear constraints", "Random phrases", "No structure"],
+            "correct": "Clear constraints"
+          },
+          {
+            "question": "A good prompt avoids ambiguity.",
+            "options": ["True", "False"],
+            "correct": "True"
+          }
+        ],
+        "points": 50
+      },
+      {
+        "id": 2,
+        "title": "Crafting Effective Prompts",
+        "activityType": "prompt",
+        "activity": "Prompt: Write a Prompt",
+        "prompt": "Write a prompt to generate a Python function that calculates the factorial of a number.",
+        "correctKeywords": ["Python", "function", "factorial", "error handling"],
+        "points": 40
+      },
+      {
+        "id": 3,
+        "title": "Optimizing Prompts",
+        "activityType": "coding",
+        "activity": "Refine a Prompt",
+        "task": "Refine this vague prompt: \"Make a program\" to be specific.",
+        "correctResponse": "/JavaScript.*function.*sort.*array/",
+        "points": 50
+      }
+    ]
+  },
+  "3": {
+    "title": "Data Preparation and AI Data",
+    "proficiency": "Intermediate",
+    "modules": [
+      {
+        "id": 1,
+        "title": "Viewing and Exploring Data",
+        "activityType": "guided",
+        "activity": "Walkthrough: How to view and explore data in Python",
+        "steps": [
+          "Load a CSV file using pandas (pd.read_csv)",
+          "Display the first few rows with df.head()",
+          "Check data types with df.dtypes",
+          "Summarize data with df.describe()",
+          "Visualize data with matplotlib (e.g., plt.hist)",
+          "Practice: Try loading and viewing your own dataset"
+        ],
+        "points": 50
+      },
+      {
+        "id": 2,
+        "title": "Managing and Storing Data",
+        "activityType": "guided",
+        "activity": "Walkthrough: How to manage and store data securely",
+        "steps": [
+          "Understand file formats: CSV, JSON, Parquet",
+          "Save dataframes to files with df.to_csv()",
+          "Use databases for large datasets (e.g., SQLite, PostgreSQL)",
+          "Set up access controls and permissions",
+          "Backup and version your data",
+          "Practice: Save and load data in different formats"
+        ],
+        "points": 50
+      },
+      {
+        "id": 3,
+        "title": "Analyzing and Classifying Data",
+        "activityType": "interactive",
+        "activity": "Hands-on: Analyze and classify data",
+        "steps": [
+          "Identify features and labels in a dataset",
+          "Use pandas to group and classify data",
+          "Apply scikit-learn for basic classification (e.g., train a classifier)",
+          "Visualize classification results",
+          "Practice: Classify a sample dataset"
+        ],
+        "points": 60
+      },
+      {
+        "id": 4,
+        "title": "Protecting Data: Privacy and Security",
+        "activityType": "guided",
+        "activity": "Walkthrough: How to protect sensitive data (PII, PHI)",
+        "steps": [
+          "Identify PII and PHI in datasets",
+          "Mask sensitive columns using pandas (e.g., replace with asterisks)",
+          "Apply data anonymization techniques",
+          "Encrypt data before storage or transmission",
+          "Understand regulations: GDPR, HIPAA",
+          "Practice: Mask and anonymize a sample dataset"
+        ],
+        "points": 60
+      },
+      {
+        "id": 5,
+        "title": "Data Cleaning and Preprocessing",
+        "activityType": "coding",
+        "activity": "Code Exercise: Clean and preprocess data",
+        "task": "Given a CSV with missing values and outliers, write Python code to clean the data (fill missing values, remove outliers, normalize columns)",
+        "correctResponse": "/fillna.*drop.*normalize/",
+        "points": 60
+      }
+    ]
+  },
+  "4": {
+    "title": "Requirements Analysis",
+    "proficiency": "Intermediate",
+    "modules": [
+    ]
+  },
+  "5": {
+    "title": "SOP and Regulation Documentation",
+    "proficiency": "Advanced",
+    "modules": [
+    ]
+  },
+  "6": {
+    "title": "AI Model Deployment",
+    "proficiency": "Advanced",
+    "modules": [
+    ]
+  }
+}

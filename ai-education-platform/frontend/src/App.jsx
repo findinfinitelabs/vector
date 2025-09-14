@@ -5,6 +5,7 @@ import LoginPage from './pages/LoginPage';
 import LandingPage from './pages/LandingPage';
 import ProfilePage from './pages/ProfilePage';
 import LearningPathPage from './pages/LearningPathPage';
+import ConfigPage from './pages/ConfigPage';
 
 function App() {
   return (
@@ -15,7 +16,8 @@ function App() {
           <Route path="/landing" element={<LandingPage />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/path/:pathId" element={<LearningPathPage />} />
-        </Routes>
+          <Route path="/config" element={<ConfigPage />} />
+</Routes>
       </Router>
     </AuthProvider>
   );

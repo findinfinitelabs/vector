@@ -28,3 +28,18 @@ Feature: User Authentication
     When the user clicks the logout button in the navbar
     Then the session is cleared
     And the user is redirected to the login page
+
+  Scenario: Successful registration with email and password
+    Given the user is on the login page and switches to registration mode
+    When the user enters a unique email and password
+    And clicks the register button
+    Then a success message "Registration successful! Please log in." is displayed
+    And the user is switched back to login mode
+    And the user data is stored securely (hashed password)
+
+  Scenario: Failed registration with existing email
+    Given the user is on the login page and switches to registration mode
+    When the user enters an existing email and password
+    And clicks the register button
+    Then an error message "Email already exists" is displayed
+    And the user remains in registration mode

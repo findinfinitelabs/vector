@@ -1,16 +1,45 @@
-# Node.js dependencies
-ai-education-platform/frontend/node_modules/
-ai-education-platform/backend/node_modules/
+# Ignore node_modules folders
+**/node_modules/
 
-# Logs
-ai-education-platform/frontend/npm-debug.log*
-ai-education-platform/backend/npm-debug.log*
+# Ignore npm debug logs
+npm-debug.log*
 
-# Build output
-ai-education-platform/frontend/build/
+# Ignore .env files
+.env
 
-# OS files
+# Ignore Python virtual environments
+.venv/
+
+# Ignore macOS system files
 .DS_Store
 
-# Misc
-.env
+# IDE/editor folders
+.vscode/
+.idea/
+
+# Build output
+dist/
+build/
+
+# Coverage reports
+coverage/
+
+# Log files
+*.log
+yarn-error.log
+
+# OS files
+Thumbs.db
+
+# Environment files
+.env.local
+.env.*.local
+
+# Temporary files
+*.tmp
+*.swp
+*.swo
+
+# Yarn
+.yarn/
+.pnp.*

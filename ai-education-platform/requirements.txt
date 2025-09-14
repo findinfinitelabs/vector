@@ -1,0 +1,17 @@
+# Python requirements for AI Education Platform
+
+fastapi
+uvicorn
+pydantic
+sqlalchemy
+alembic
+python-dotenv
+requests
+pytest
+jupyter
+scikit-learn
+pandas
+numpy
+matplotlib
+openai
+httpx
