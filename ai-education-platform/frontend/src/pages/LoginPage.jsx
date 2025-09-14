@@ -66,72 +66,67 @@ function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <h1 className="text-3xl font-bold text-center text-primary mb-6">
-          AI Education Platform
-        </h1>
-        <h2 className="text-xl font-semibold text-center mb-4">
-          {isRegisterMode ? 'Register' : 'Login'}
-        </h2>
-        <form onSubmit={isRegisterMode ? handleRegister : handleSubmit} className="space-y-4">
-          <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              id="email"
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Enter your email"
-              aria-required="true"
-            />
-          </div>
-          <div>
-            <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
-            <input
-              id="password"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              className="mt-1 w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
-              placeholder="Enter your password"
-              aria-required="true"
-            />
-          </div>
-          {error && (
-            <p className="text-red-500 text-sm" role="alert">
-              {error}
-            </p>
-          )}
-          <button
-            type="submit"
-            className="w-full bg-primary text-white py-2 rounded-md hover:bg-opacity-90 transition duration-200"
-          >
+    <div className="container d-flex align-items-center justify-content-center min-vh-100 bg-light">
+      <div className="card shadow w-100" style={{ maxWidth: 400 }}>
+        <div className="card-body">
+          <h1 className="card-title text-center mb-4">AI Education Platform</h1>
+          <h2 className="card-subtitle mb-3 text-center">
             {isRegisterMode ? 'Register' : 'Login'}
-          </button>
-        </form>
-        <div className="mt-4 text-center">
-          <p className="text-sm text-gray-600">
-            {isRegisterMode ? 'Already have an account?' : 'Need an account?'}
-            <button
-              onClick={() => setIsRegisterMode(!isRegisterMode)}
-              className="ml-1 text-primary hover:underline"
-            >
-              {isRegisterMode ? 'Login' : 'Register'}
+          </h2>
+          <form onSubmit={isRegisterMode ? handleRegister : handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">Email</label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="form-control"
+                placeholder="Enter your email"
+                aria-required="true"
+              />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="password" className="form-label">Password</label>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="form-control"
+                placeholder="Enter your password"
+                aria-required="true"
+              />
+            </div>
+            {error && (
+              <div className="alert alert-danger py-2" role="alert">
+                {error}
+              </div>
+            )}
+            <button type="submit" className="btn btn-primary w-100">
+              {isRegisterMode ? 'Register' : 'Login'}
             </button>
-          </p>
-          <p className="text-sm text-gray-600 mt-2">Or sign in with</p>
-          <button
-            onClick={handleGoogleLogin}
-            className="mt-2 w-full bg-gray-200 text-gray-800 py-2 rounded-md hover:bg-gray-300 transition duration-200"
-          >
-            Google
-          </button>
+          </form>
+          <div className="mt-3 text-center">
+            <p className="small">
+              {isRegisterMode ? 'Already have an account?' : 'Need an account?'}
+              <button
+                type="button"
+                onClick={() => setIsRegisterMode(!isRegisterMode)}
+                className="btn btn-link btn-sm"
+              >
+                {isRegisterMode ? 'Login' : 'Register'}
+              </button>
+            </p>
+            <p className="small mt-2">Or sign in with</p>
+            <button
+              type="button"
+              onClick={handleGoogleLogin}
+              className="btn btn-outline-secondary w-100 mt-2"
+            >
+              Google
+            </button>
+          </div>
         </div>
       </div>
     </div>

@@ -23,44 +23,48 @@ function LandingPage() {
   }
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="bg-light min-vh-100">
       <Navbar />
-      <div className="container mx-auto p-6">
-        <h1 className="text-2xl font-bold mb-4">
-          Welcome, {user.email}!
-        </h1>
-        <div className="mb-6">
-          <h2 className="text-lg font-semibold">Your Progress</h2>
-          <div className="w-full bg-gray-200 rounded-full h-4 mt-2">
+      <div className="container py-5">
+        <h1 className="display-6 mb-4">Welcome, {user.email}!</h1>
+        <div className="mb-5">
+          <h2 className="h5">Your Progress</h2>
+          <div className="progress mt-2" style={{height: '20px'}}>
             <div
-              className="bg-primary h-4 rounded-full"
+              className="progress-bar bg-primary"
+              role="progressbar"
               style={{ width: `${progress}%` }}
-            ></div>
-          </div>
-          <p className="text-sm text-gray-600 mt-1">{progress}% Complete</p>
-        </div>
-        <h2 className="text-lg font-semibold mb-4">Learning Paths</h2>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {learningPaths.map((path) => (
-            <div
-              key={path.id}
-              className="bg-white p-4 rounded-lg shadow-md flex justify-between items-center"
+              aria-valuenow={progress}
+              aria-valuemin={0}
+              aria-valuemax={100}
             >
-              <div>
-                <h3 className="text-md font-medium">{path.title}</h3>
-                <p className="text-sm text-gray-600">Status: {path.status}</p>
+              {progress}%
+            </div>
+          </div>
+        </div>
+        <h2 className="h5 mb-4">Learning Paths</h2>
+        <div className="row g-4">
+          {learningPaths.map((path) => (
+            <div key={path.id} className="col-md-6 col-lg-4">
+              <div className="card h-100 shadow-sm">
+                <div className="card-body d-flex flex-column justify-content-between">
+                  <div>
+                    <h3 className="h6">{path.title}</h3>
+                    <p className="text-muted small">Status: {path.status}</p>
+                  </div>
+                  <button
+                    onClick={() => navigate(`/path/${path.id}`)}
+                    className={`btn ${
+                      path.status === 'Locked'
+                        ? 'btn-secondary disabled'
+                        : 'btn-primary'
+                    } mt-3`}
+                    disabled={path.status === 'Locked'}
+                  >
+                    {path.status}
+                  </button>
+                </div>
               </div>
-              <button
-                onClick={() => navigate(`/path/${path.id}`)}
-                className={`px-4 py-2 rounded-md text-white ${
-                  path.status === 'Locked'
-                    ? 'bg-gray-400 cursor-not-allowed'
-                    : 'bg-primary hover:bg-opacity-90'
-                }`}
-                disabled={path.status === 'Locked'}
-              >
-                {path.status}
-              </button>
             </div>
           ))}
         </div>

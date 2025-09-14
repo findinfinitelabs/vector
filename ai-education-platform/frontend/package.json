@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "start": "react-scripts start",
-    "build": "react-scripts build",
-    "postinstall": "npx tailwindcss init"
+  "build": "react-scripts build"
+    
   },
   "dependencies": {
     "react": "^18.2.0",
@@ -12,8 +12,7 @@
     "react-router-dom": "^6.4.0"
   },
   "devDependencies": {
-    "react-scripts": "^5.0.0",
-    "tailwindcss": "^4.1.13"
+    "react-scripts": "^5.0.0"
   },
   "browserslist": {
     "production": [
