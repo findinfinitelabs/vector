@@ -1,0 +1,16 @@
+# Node.js dependencies
+ai-education-platform/frontend/node_modules/
+ai-education-platform/backend/node_modules/
+
+# Logs
+ai-education-platform/frontend/npm-debug.log*
+ai-education-platform/backend/npm-debug.log*
+
+# Build output
+ai-education-platform/frontend/build/
+
+# OS files
+.DS_Store
+
+# Misc
+.env
